@@ -1,0 +1,41 @@
+*.class
+
+#package file
+*.jar
+*.war
+*.ear
+
+#kdiff3 ignore
+*.orig
+
+#maven ignore
+target/
+
+#eclipse ignore
+.settings/
+.project
+.classpath
+
+#idea ignore
+.idea/
+/idea/
+*.ipr
+*.iml
+*.iws
+
+#temp file
+*.log
+*.cache
+*.patch
+*.imp
+<<<<<<< HEAD
+=======
+
+#system
+.DS_Store
+Thumbs.db
+>>>>>>> parent of 64e90cb... first commit init project
+
+#system ignore
+*DS_Store
+Thumbs.db
