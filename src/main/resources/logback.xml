@@ -11,10 +11,9 @@
     </appender>
 
     <appender name="mmall" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <!--<File>d:/mmalllog/mmall.log</File>-->
-        <File>/developer/apache-tomcat-7.0.73/logs/mmall.log</File>
+        <File>E:/File/Tomcat/apache-tomcat-8.5.31-windows-x64/apache-tomcat-8.5.31/logs/mmall.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/developer/apache-tomcat-7.0.73/logs/mmall.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <fileNamePattern>E:/File/Tomcat/apache-tomcat-8.5.31-windows-x64/apache-tomcat-8.5.31/logs/mmall.%d{yyyy-MM-dd}.log</fileNamePattern>
             <append>true</append>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
@@ -23,13 +22,10 @@
         </encoder>
     </appender>
 
-
     <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <!--<File>d:/mmalllog/error.log</File>-->
-        <File>/developer/apache-tomcat-7.0.73/logs/error.log</File>
+        <File>E:/File/Tomcat/apache-tomcat-8.5.31-windows-x64/apache-tomcat-8.5.31/logs/error.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/devsoft/apache-tomcat-7.0.73/logs/error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
-            <!--<fileNamePattern>d:/mmalllog/error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
+            <fileNamePattern>E:/File/Tomcat/apache-tomcat-8.5.31-windows-x64/apache-tomcat-8.5.31/logs/error.%d{yyyy-MM-dd}.log</fileNamePattern>
             <append>true</append>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
@@ -47,8 +43,6 @@
         <appender-ref ref="mmall" />
         <appender-ref ref="console"/>
     </logger>
-
-
 
     <!-- geelynote mybatis log 日志 -->
 
@@ -68,7 +62,6 @@
     <!--<logger name="java.sql.PreparedStatement" level="DEBUG">-->
         <!--<appender-ref ref="console"/>-->
     <!--</logger>-->
-
 
     <root level="DEBUG">
         <appender-ref ref="console"/>

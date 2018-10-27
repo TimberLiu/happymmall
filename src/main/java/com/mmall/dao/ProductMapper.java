@@ -1,6 +1,9 @@
 package com.mmall.dao;
 
 import com.mmall.pojo.Product;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @author Timber
@@ -50,4 +53,28 @@ public interface ProductMapper {
      * @return int
      */
     int updateByPrimaryKey(Product product);
+
+    /**
+     * 查询商品列表
+     * @return List<Product>
+     */
+    List<Product> selectList();
+
+    /**
+     * 根据商品名称和商品 Id 查询商品
+     * @param productName 产品名称
+     * @param productId 商品 Id
+     * @return List<Product>
+     */
+    List<Product> selectByNameAndProductId(@Param("productName") String productName, @Param("productId") Integer productId);
+
+
+    /**
+     * 根据商品名称和分类 Id 集合查询商品
+     * @param productName 商品名称
+     * @param categoryIdList 分类 Id 集合
+     * @return List<Product>
+     */
+    List<Product> selectByNameAndCategoryIds(@Param("productName") String productName, @Param("categoryIdList") List<Integer> categoryIdList);
+
 }

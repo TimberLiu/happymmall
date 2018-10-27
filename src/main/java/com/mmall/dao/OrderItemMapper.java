@@ -1,6 +1,10 @@
 package com.mmall.dao;
 
+import com.mmall.pojo.Order;
 import com.mmall.pojo.OrderItem;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @author Timber
@@ -50,4 +54,27 @@ public interface OrderItemMapper {
      * @return int
      */
     int updateByPrimaryKey(OrderItem orderItem);
+
+    /**
+     * 根据订单号和用户 Id 查询订单详情
+     * @param orderNo 订单号
+     * @param userId 用户 Id
+     * @return List<OrderItem>
+     */
+    List<OrderItem> getByOrderNoUserId(@Param("orderNo") Long orderNo, @Param("userId") Integer userId);
+
+    /**
+     * 根据订单号查询订单详情
+     * @param orderNo 订单号
+     * @return List<OrderItem>
+     */
+    List<OrderItem> getByOrderNo(@Param("orderNo") Long orderNo);
+
+    /**
+     * 批量插入
+     * @param orderItemList 待插入的订单详情项集合
+     */
+    void batchInsert(@Param("orderItemList") List<OrderItem> orderItemList);
+
+
 }
