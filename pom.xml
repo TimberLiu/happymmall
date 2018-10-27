@@ -257,7 +257,7 @@
           <compilerArguments>
             <extdirs>${project.basedir}/src/main/webapp/WEB-INF/lib</extdirs>
           </compilerArguments>
-        </configuration>
+      </configuration>
       </plugin>
     </plugins>
 
