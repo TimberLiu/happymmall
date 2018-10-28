@@ -13,42 +13,42 @@ import java.util.List;
 public interface ProductMapper {
 
     /**
-     * delete product by productId
+     * 根据商品 Id 删除商品
      * @param id productId
      * @return int
      */
     int deleteByPrimaryKey(Integer id);
 
     /**
-     * insert product
+     * 插入商品
      * @param product product
      * @return int
      */
     int insert(Product product);
 
     /**
-     * insert product selectively
+     * 有选择地插入商品
      * @param product product
      * @return int
      */
     int insertSelective(Product product);
 
     /**
-     * select product by productId
+     * 根据商品 Id 查询商品
      * @param id productId
      * @return Product
      */
     Product selectByPrimaryKey(Integer id);
 
     /**
-     * update product by product selectively
+     * 有选择地更新商品
      * @param product product
      * @return int
      */
     int updateByPrimaryKeySelective(Product product);
 
     /**
-     * update product by product
+     * 更新商品
      * @param product product
      * @return int
      */
@@ -67,7 +67,6 @@ public interface ProductMapper {
      * @return List<Product>
      */
     List<Product> selectByNameAndProductId(@Param("productName") String productName, @Param("productId") Integer productId);
-
 
     /**
      * 根据商品名称和分类 Id 集合查询商品

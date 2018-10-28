@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
+ * 商品模块
  * @author Timber
- * @date 2018/10/14
+ * @date 2018/10/13
  */
 
 @RequestMapping("/product/")

@@ -1,7 +1,6 @@
 package com.mmall.dao;
 
 import com.mmall.pojo.Order;
-import com.mmall.pojo.OrderItem;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -14,42 +13,42 @@ import java.util.List;
 public interface OrderMapper {
 
     /**
-     * delete order by orderId
+     * 根据订单 Id 删除订单
      * @param id orderId
-     * @return int
+     * @return int 删除的数量
      */
     int deleteByPrimaryKey(Integer id);
 
     /**
-     * insert order
+     * 插入订单
      * @param order order
-     * @return int
+     * @return int 插入的数量
      */
     int insert(Order order);
 
     /**
-     * insert order selectively
+     * 有选择地插入订单
      * @param order order
-     * @return int
+     * @return int 插入的数量
      */
     int insertSelective(Order order);
 
     /**
-     * select order by orderId
+     * 根据订单 Id 查询订单
      * @param id orderId
-     * @return Order
+     * @return Order 订单对象
      */
     Order selectByPrimaryKey(Integer id);
 
     /**
-     * update order by order selectively
+     * 有选择地更新订单
      * @param order order
-     * @return int
+     * @return int 更新的数量
      */
     int updateByPrimaryKeySelective(Order order);
 
     /**
-     * update order
+     * 更新订单
      * @param order order
      * @return int
      */

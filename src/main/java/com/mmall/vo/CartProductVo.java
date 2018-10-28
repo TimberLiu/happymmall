@@ -3,7 +3,7 @@ package com.mmall.vo;
 import java.math.BigDecimal;
 
 /**
- * 集合了产品和购物车的一个抽象对象
+ * 集合产品和购物车的一个抽象对象
  * @author Timber
  * @date 2018/10/15
  */

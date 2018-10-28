@@ -12,44 +12,44 @@ import java.util.List;
 public interface CategoryMapper {
 
     /**
-     * delete category by categoryId
-     * @param id categoryId
-     * @return int
+     * 根据分类 Id 删除分类
+     * @param id 分类 Id
+     * @return int 删除的数量
      */
     int deleteByPrimaryKey(Integer id);
 
     /**
-     * insert category
-     * @param category
-     * @return int
+     * 插入分类
+     * @param category 分类对象
+     * @return int 插入的数量
      */
     int insert(Category category);
 
     /**
-     * insert category selectively
-     * @param category category
-     * @return int
+     * 有选择地插入分类
+     * @param category 分类对象
+     * @return int 插入的数量
      */
     int insertSelective(Category category);
 
     /**
-     * select category by categoryId
-     * @param id categoryId
-     * @return Category
+     * 根据分类 Id 查询分类
+     * @param id 分类 Id
+     * @return Category 分类对象
      */
     Category selectByPrimaryKey(Integer id);
 
     /**
-     * update category by category selectively
-     * @param category category
-     * @return int
+     * 根据分类有选择地更新分类
+     * @param category 分类
+     * @return int 更新的数量
      */
     int updateByPrimaryKeySelective(Category category);
 
     /**
-     * update category by category
-     * @param category category
-     * @return int
+     * 更新分类
+     * @param category 分类对象
+     * @return int 更新的数量
      */
     int updateByPrimaryKey(Category category);
 

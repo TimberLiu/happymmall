@@ -1,10 +1,7 @@
 package com.mmall.dao;
 
-import com.mmall.pojo.Category;
 import com.mmall.pojo.User;
 import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 /**
  * @author Timber
@@ -14,42 +11,42 @@ import java.util.List;
 public interface UserMapper {
 
     /**
-     * delete user by userId
+     * 根据用户 Id 删除用户
      * @param id userId
      * @return int
      */
     int deleteByPrimaryKey(Integer id);
 
     /**
-     * insert user
+     * 插入用户
      * @param user user
      * @return int
      */
     int insert(User user);
 
     /**
-     * insert user selectively
+     * 有选择地插入用户
      * @param user user
      * @return int
      */
     int insertSelective(User user);
 
     /**
-     * select user by userId
+     * 根据用户 Id 查询用户
      * @param id userId
      * @return User
      */
     User selectByPrimaryKey(Integer id);
 
     /**
-     * update user by userId
+     * 根据用户 Id 更新用户
      * @param user user
      * @return int
      */
     int updateByPrimaryKeySelective(User user);
 
     /**
-     * update user by user
+     * 更新用户
      * @param user user
      * @return int
      */

@@ -1,9 +1,7 @@
 package com.mmall.dao;
 
 import com.mmall.pojo.Cart;
-import com.sun.tracing.dtrace.ProviderAttributes;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.jmx.export.annotation.ManagedOperationParameter;
 
 import java.util.List;
 
@@ -15,44 +13,44 @@ import java.util.List;
 public interface CartMapper {
 
     /**
-     * delete cart by cartId
-     * @param id cartId
-     * @return int
+     * 根据购物车 Id 删除购物车
+     * @param id 购物车 Id
+     * @return int 删除的数量
      */
     int deleteByPrimaryKey(Integer id);
 
     /**
-     * insert cart
-     * @param cart cart
-     * @return int
+     * 插入购物车
+     * @param cart 购物车对象
+     * @return int 插入的数量
      */
     int insert(Cart cart);
 
     /**
-     * insert cart selectively
-     * @param cart cart
-     * @return int
+     * 根据购物车对象有选择地插入购物车
+     * @param cart 购物车对象
+     * @return int 插入的数量
      */
     int insertSelective(Cart cart);
 
     /**
-     * select cart by cartId
-     * @param id cartId
-     * @return Cart
+     * 根据购物车 Id 查询购物车
+     * @param id 购物车 Id
+     * @return Cart 查询出来的购物车
      */
     Cart selectByPrimaryKey(Integer id);
 
     /**
-     * update cart by cart selectively
-     * @param cart cart
-     * @return int
+     * 根据购物车对象有选择地更新购物车
+     * @param cart 购物车
+     * @return int 更新的数量
      */
     int updateByPrimaryKeySelective(Cart cart);
 
     /**
-     * update cart by cart
-     * @param cart cart
-     * @return int
+     * 根据购物车更新购物车
+     * @param cart 购物车对象
+     * @return int 更新的数量
      */
     int updateByPrimaryKey(Cart cart);
 

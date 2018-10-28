@@ -13,49 +13,49 @@ import java.util.List;
 public interface ShippingMapper {
 
     /**
-     * delete shipping by shippingId
+     * 根据收货地址 Id 删除收货地址
      * @param id shippingId
      * @return int
      */
     int deleteByPrimaryKey(Integer id);
 
     /**
-     * insert shipping
+     * 插入收货地址
      * @param shipping shipping
      * @return int
      */
     int insert(Shipping shipping);
 
     /**
-     * insert shipping selectively
+     * 有选择地插入收货地址
      * @param shipping shipping
      * @return int
      */
     int insertSelective(Shipping shipping);
 
     /**
-     * select shipping by shippingId
+     * 根据收货地址 Id 查询收货地址
      * @param id shippingId
      * @return Shipping
      */
     Shipping selectByPrimaryKey(Integer id);
 
     /**
-     * update shipping by shipping selectively
+     * 有选择地更新收货地址
      * @param shipping shipping
      * @return int
      */
     int updateByPrimaryKeySelective(Shipping shipping);
 
     /**
-     * update shipping by shipping
+     * 更新收货地址
      * @param shipping shipping
      * @return int
      */
     int updateByPrimaryKey(Shipping shipping);
 
     /**
-     * 根据用户 Id 和收货地址 Id 删除
+     * 根据用户 Id 和收货地址 Id 删除收货地址
      * @param userId 用户 Id
      * @param shippingId 收货地址 Id
      * @return int 删除行数

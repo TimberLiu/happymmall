@@ -15,6 +15,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 
+/**
+ * 收货地址模块
+ * @author Timber
+ * @date 2018/10/17
+ */
+
 @Controller
 @RequestMapping("/shipping/")
 public class ShippingController {

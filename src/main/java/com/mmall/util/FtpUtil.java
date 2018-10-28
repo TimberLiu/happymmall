@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
+ * 上传文件工具类
  * @author Timber
  * @date 2018/10/14
  */

@@ -1,5 +1,10 @@
 package com.mmall.vo;
 
+/**
+ * @author Timber
+ * @date 2018/10/21
+ */
+
 public class ShippingVo {
 
     private String receiverName;

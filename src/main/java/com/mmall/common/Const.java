@@ -1,7 +1,6 @@
 package com.mmall.common;
 
 import com.google.common.collect.Sets;
-import com.mmall.service.impl.OrderServiceImpl;
 
 import java.util.Set;
 
@@ -10,6 +9,7 @@ import java.util.Set;
  * @author Timber
  * @date 2018/10/12
  */
+
 public class Const {
 
     public static final String CURRENT_USER = "currentUser";

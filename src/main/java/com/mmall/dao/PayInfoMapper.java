@@ -10,42 +10,42 @@ import com.mmall.pojo.PayInfo;
 public interface PayInfoMapper {
 
     /**
-     * delete payInfo by payInfoId
-     * @param id payInfoId
+     * 根据支付信息的 Id 删除订单信息
+     * @param id 订单信息 Id
      * @return int
      */
     int deleteByPrimaryKey(Integer id);
 
     /**
-     * insert payInfo
+     * 插入订单信息
      * @param payInfo payInfo
      * @return int
      */
     int insert(PayInfo payInfo);
 
     /**
-     * insert payInfo selectively
+     * 有选择地插入支付信息
      * @param payInfo payInfo
      * @return int
      */
     int insertSelective(PayInfo payInfo);
 
     /**
-     * select payInfo by payInfoId
+     * 根据支付信息 Id 查询
      * @param id payInfoId
      * @return PayInfo
      */
     PayInfo selectByPrimaryKey(Integer id);
 
     /**
-     * update payInfo by payInfo selectively
+     * 有选择地更新支付信息
      * @param payInfo payInfo
      * @return int
      */
     int updateByPrimaryKeySelective(PayInfo payInfo);
 
     /**
-     * update payInfo
+     * 更新支付信息
      * @param payInfo payInfo
      * @return int
      */

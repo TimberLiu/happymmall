@@ -6,7 +6,7 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 import java.io.Serializable;
 
 /**
- * 响应对象设计
+ * 高可用响应对象
  * @author Timber
  * @date 2018/10/12
  */

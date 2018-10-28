@@ -3,6 +3,7 @@ package com.mmall.util;
 import java.security.MessageDigest;
 
 /**
+ * Md5 加密解密工具类
  * @author Timber
  * @date 2018/10/12
  */

@@ -24,6 +24,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
+ * 商品管理模块
  * @author Timber
  * @date 2018/10/13
  */

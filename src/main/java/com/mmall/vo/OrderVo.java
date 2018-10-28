@@ -3,6 +3,11 @@ package com.mmall.vo;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * @author Timber
+ * @date 2018/10/21
+ */
+
 public class OrderVo {
 
     private long orderNo;

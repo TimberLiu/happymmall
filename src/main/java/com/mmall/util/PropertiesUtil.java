@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.Properties;
 
 /**
+ * 加载配置工具类
  * @author Timber
  * @date 2018/10/13
  */

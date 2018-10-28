@@ -3,6 +3,7 @@ package com.mmall.util;
 import java.math.BigDecimal;
 
 /**
+ * 商品价格处理工具类
  * @author Timber
  * @date 2018/10/15
  */

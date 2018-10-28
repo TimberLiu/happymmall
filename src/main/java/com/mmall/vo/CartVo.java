@@ -7,6 +7,7 @@ import java.util.List;
  * @author Timber
  * @date 2018/10/15
  */
+
 public class CartVo {
 
     private List<CartProductVo> cartProductVoList;
