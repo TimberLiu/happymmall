@@ -36,5 +36,4 @@ public class BigDecimalUtil {
         return b1.divide(b2, 2, BigDecimal.ROUND_HALF_UP);
     }
 
-
 }

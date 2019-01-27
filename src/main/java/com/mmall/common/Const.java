@@ -38,11 +38,11 @@ public class Const {
         /**
          * 商品数量限制失败
          */
-        String LIMIT_NUM_FAIL = "LIMIE_NUM_FAIL";
+        String LIMIT_NUM_FAIL = "LIMIT_NUM_FAIL";
         /**
          * 商品数量限制成功
          */
-        String LIMIT_NUM_SECCESS = "LIMIE_NUM_SECCESS";
+        String LIMIT_NUM_SUCCESS = "LIMIT_NUM_SUCCESS";
     }
 
     public interface Role {
