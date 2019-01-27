@@ -44,7 +44,7 @@ public class FtpUtil {
     }
 
     private boolean uploadFile(String remotePath, List<File> fileList) throws IOException {
-        boolean uploaded = true;
+        boolean uploaded = false;
         FileInputStream fis = null;
         boolean isSuccess = connectServer(ip, port, user, password);
         if(isSuccess) {
@@ -58,6 +58,7 @@ public class FtpUtil {
                     fis = new FileInputStream(fileItem);
                     ftpClient.storeFile(fileItem.getName(), fis);
                 }
+                uploaded = true;
             } catch (IOException e) {
                 logger.error("上传文件异常", e);
                 uploaded = false;
