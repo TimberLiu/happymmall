@@ -16,9 +16,9 @@ import java.util.List;
  */
 public class FtpUtil {
 
-    private static String ftpIp = PropertiesUtil.getProperty("ftp.server.ip", "192.168.16.128");
-    private static String ftpUser = PropertiesUtil.getProperty("ftp.user", "mmallftp");
-    private static String ftpPassword = PropertiesUtil.getProperty("ftp.pass", "ftppassword");
+    private static String ftpIp = PropertiesUtil.getProperty("ftp.server.ip", "123.56.9.126");
+    private static String ftpUser = PropertiesUtil.getProperty("ftp.user", "ftpuser");
+    private static String ftpPassword = PropertiesUtil.getProperty("ftp.pass", "qwqp1210");
 
     private static Logger logger = LoggerFactory.getLogger(FtpUtil.class);
 
@@ -73,6 +73,7 @@ public class FtpUtil {
     private boolean connectServer(String ip, int port, String user, String password) {
         boolean isSuccess = false;
         ftpClient = new FTPClient();
+        ftpClient.setConnectTimeout(10*1000);
         try {
             ftpClient.connect(ip, port);
             isSuccess = ftpClient.login(user, password);
