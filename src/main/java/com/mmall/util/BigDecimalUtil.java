@@ -1,5 +1,7 @@
 package com.mmall.util;
 
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 
 /**
@@ -7,9 +9,9 @@ import java.math.BigDecimal;
  * @author Timber
  * @date 2018/10/15
  */
-public class BigDecimalUtil {
 
-    private BigDecimalUtil() { }
+@NoArgsConstructor
+public class BigDecimalUtil {
 
     public static BigDecimal add(double v1, double v2) {
         BigDecimal b1 = new BigDecimal(Double.toString(v1));

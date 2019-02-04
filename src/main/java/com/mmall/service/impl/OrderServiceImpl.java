@@ -27,10 +27,9 @@ import com.mmall.vo.OrderItemVo;
 import com.mmall.vo.OrderProductVo;
 import com.mmall.vo.OrderVo;
 import com.mmall.vo.ShippingVo;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,9 +39,8 @@ import java.math.BigDecimal;
 import java.util.*;
 
 @Service("iOrderService")
+@Slf4j
 public class OrderServiceImpl implements IOrderService {
-
-    private static final Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
 
     @Autowired
     private OrderMapper orderMapper;
@@ -383,7 +381,7 @@ public class OrderServiceImpl implements IOrderService {
 
         //  一定要在创建AlipayTradeService之前调用Configs.init()设置默认参数
         //  Configs会读取classpath下的zfbinfo.properties文件配置信息，如果找不到该文件则确认该文件是否在classpath目录
-        Configs.init("zfbinfo.properties");
+        Configs.init("src/main/resources.beta/zfbinfo.properties");
 
         // 使用Configs提供的默认参数
         //  AlipayTradeService可以使用单例或者为静态成员对象，不需要反复new

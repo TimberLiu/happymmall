@@ -8,12 +8,6 @@ package com.mmall.common;
 
 public enum ResponseCode {
 
-    /**
-     * 1: SUCCESS
-     * 2: ERROR
-     * 10: NEED_LOGIN
-     * 2: ILLEGAL_ARGUMENT
-     */
     SUCCESS(0, "SUCCESS"),
     ERROR(1, "ERROR"),
     NEED_LOGIN(10, "NEED_LOGIN"),
