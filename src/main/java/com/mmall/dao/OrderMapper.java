@@ -2,6 +2,7 @@ package com.mmall.dao;
 
 import com.mmall.pojo.Order;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -81,5 +82,20 @@ public interface OrderMapper {
      * @return List<Order>
      */
     List<Order> selectAllOrder();
+
+    /**
+     * 根据创建时间来查询订单的状态
+     * @param status
+     * @param date
+     * @return
+     */
+    List<Order> selectOrderStatusByCreateTime(@Param("status") Integer status, @Param("date") String date);
+
+    /**
+     * 根据订单 Id 关闭订单，即修改订单状态
+     * @param id
+     * @return
+     */
+    int closeOrderByOrderId(Integer id);
 
 }

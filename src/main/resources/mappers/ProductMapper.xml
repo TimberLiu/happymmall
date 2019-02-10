@@ -214,4 +214,11 @@
     </if>
   </select>
 
+  <select id="selectStockByProductId" parameterType="integer" resultType="integer">
+    select stock
+    from mmall_product
+    where id = #{id,jdbcType=INTEGER}
+    for update
+  </select>
+
 </mapper>

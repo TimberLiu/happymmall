@@ -229,4 +229,21 @@
     order by create_time desc
   </select>
 
+  <select id="selectOrderStatusByCreateTime" resultMap="BaseResultMap" parameterType="map" >
+    select
+      <include refid="Base_Column_List"/>
+    from mmall_order
+    where status = #{status,jdbcType=INTEGER}
+    <![CDATA[
+    and create_time <= #{date,jdbcType=TIMESTAMP}
+    ]]>
+    order by create_time desc
+  </select>
+
+  <update id="closeOrderByOrderId" parameterType="integer">
+    update mmall_order
+    set status = 0
+    where id = #{id,jdbcType=INTEGER};
+  </update>
+
 </mapper>
