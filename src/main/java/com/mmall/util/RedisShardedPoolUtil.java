@@ -67,6 +67,19 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
+    public static String getSet(String key, String value) {
+        ShardedJedis shardedJedis = null;
+        String result = null;
+        try {
+            shardedJedis = RedisShardedPool.getJedis();
+            result = shardedJedis.getSet(key, value);
+        } catch (Exception e) {
+            log.error("getset key:{}, value:{}, error", key, value, e);
+        }
+        RedisShardedPool.returnJedis(shardedJedis);
+        return result;
+    }
+
     // exTime 以秒为单位
     public static String setEx(String key, String value, int exTime) {
         ShardedJedis shardedJedis = null;
@@ -76,6 +89,19 @@ public class RedisShardedPoolUtil {
             result = shardedJedis.setex(key, exTime, value);
         } catch (Exception e) {
             log.error("setex key:{}, value:{}, error", key, value, e);
+        }
+        RedisShardedPool.returnJedis(shardedJedis);
+        return result;
+    }
+
+    public static Long setnx(String key, String value) {
+        ShardedJedis shardedJedis = null;
+        Long result = null;
+        try {
+            shardedJedis = RedisShardedPool.getJedis();
+            result = shardedJedis.setnx(key, value);
+        } catch (Exception e) {
+            log.error("setnx key:{}, value:{}, error", key, value, e);
         }
         RedisShardedPool.returnJedis(shardedJedis);
         return result;
