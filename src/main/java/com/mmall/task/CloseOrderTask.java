@@ -1,16 +1,20 @@
 package com.mmall.task;
 
 import com.mmall.common.Const;
+import com.mmall.common.RedissonManager;
 import com.mmall.service.IOrderService;
 import com.mmall.util.PropertiesUtil;
 import com.mmall.util.RedisShardedPoolUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.redisson.Redisson;
+import org.redisson.api.RLock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PreDestroy;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Timber
@@ -23,6 +27,9 @@ public class CloseOrderTask {
 
     @Autowired
     private IOrderService iOrderService;
+
+    @Autowired
+    private RedissonManager redissonManager;
 
     @PreDestroy
     public void delLock() {
@@ -78,6 +85,30 @@ public class CloseOrderTask {
         }
 
         log.info("关闭订单定时任务结束");
+    }
+
+//    @Scheduled(cron = "0 */1 * * * ?")
+    public void closeOrderTaskV4() {
+        RLock lock = redissonManager.getRedisson().getLock(Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK);
+        boolean locked = false;
+        try {
+            if(locked = lock.tryLock(0, 5, TimeUnit.SECONDS)) {
+                log.info("Redisson 获取到分布式锁：{}, ThreadName:{}", Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK, Thread.currentThread().getName());
+                int hour = Integer.parseInt(PropertiesUtil.getProperty("close.order.task.time.hour", "2"));
+                iOrderService.closeOrder(hour);
+            } else {
+                log.info("Redisson 没有获取到分布式锁：{}, ThreadName:{}", Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK, Thread.currentThread().getName());
+
+            }
+        } catch (InterruptedException e) {
+            log.error("Redisson 获取分布式锁异常", e);
+        } finally {
+            if (!locked) {
+                return;
+            }
+            lock.unlock();
+            log.info("Redisson 释放分布式锁");
+        }
     }
 
     private void closeOrder(String lockName) {

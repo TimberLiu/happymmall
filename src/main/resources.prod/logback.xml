@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <property name="LOG_HOME" value="${CATALINA_HOME}/logs" />
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoding>UTF-8</encoding>
         <encoder>
@@ -11,9 +12,9 @@
     </appender>
 
     <appender name="mmall" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>E:/File/Tomcat/apache-tomcat-8.5.31-windows-x64/apache-tomcat-8.5.31/logs/mmall.log</File>
+        <File>${LOG_HOME}/mmall.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>E:/File/Tomcat/apache-tomcat-8.5.31-windows-x64/apache-tomcat-8.5.31/logs/mmall.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/mmall.%d{yyyy-MM-dd}.log</fileNamePattern>
             <append>true</append>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
@@ -23,9 +24,9 @@
     </appender>
 
     <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>E:/File/Tomcat/apache-tomcat-8.5.31-windows-x64/apache-tomcat-8.5.31/logs/error.log</File>
+        <File>${LOG_HOME}/error.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>E:/File/Tomcat/apache-tomcat-8.5.31-windows-x64/apache-tomcat-8.5.31/logs/error.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/error.%d{yyyy-MM-dd}.log</fileNamePattern>
             <append>true</append>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
@@ -42,6 +43,7 @@
     <logger name="com.mmall" additivity="false" level="INFO" >
         <appender-ref ref="mmall" />
         <appender-ref ref="console"/>
+        <appender-ref ref="error" />
     </logger>
 
     <!-- geelynote mybatis log 日志 -->
